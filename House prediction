@@ -1,0 +1,23 @@
+import pandas as pd
+
+import numpy as np
+
+np.random.seed(42)
+
+data = {
+
+'Area': np.random.randint(500, 5000, size=100),
+
+'Bedrooms': np.random.randint(1, 6, size=100),
+
+'Location': np.random.choice(['Delhi', 'Mumbai', 'Bangalore', 'Chennai'], size=100),
+
+'Price': np.random.randint(3000000, 20000000, size=100)
+
+}
+
+df = pd.DataFrame(data)
+
+df.to_csv('indian_housing.csv', index=False)
+
+print(df.head())
